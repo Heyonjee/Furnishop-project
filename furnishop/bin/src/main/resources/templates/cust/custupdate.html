@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<link rel="stylesheet" href="/css/re_style.css">
+<link rel="stylesheet" th:href="@{/css/re_style.css}">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
 <style>
@@ -24,7 +24,7 @@
 				$('#update_form').attr({
 					//form사이에 있는 것이 post의 형태로 updateimpl부분의 서버로 보내짐
 					'method' : 'post',
-					'action' : '/custupdateimpl'
+					'action' : '[[@{/custupdateimpl}]]'
 				});
 				//보낸다.
 				$('#update_form').submit();

@@ -17,7 +17,7 @@
 	<logger name="jdbc.connection" level="OFF" />
 
 	<!-- 개발할때는 debug, 실제 서비스를 할때는 OFF로 죽여놔야함 -->
-	<root level="OFF">
+	<root level="off">
 		<appender-ref ref="STDOUT" />
 	</root>
 

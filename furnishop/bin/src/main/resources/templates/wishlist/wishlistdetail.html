@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/re_style.css">
+<link rel="stylesheet" th:href="@{/css/re_style.css}">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
 <meta charset="utf-8">
@@ -9,8 +9,8 @@
 
 		var c = confirm('삭제하시겠습니까?');
 		if (c == true) {
-			location.href = '/wishlist/deletewish?wishno=' + wishno
-					+ '&custid=' + custid;
+			location.href = '[[@{/wishlist/deletewish?wishno=}]]' + wishno
+					+ '&[[@{custid=}]]' + custid;
 		}
 	}
 </script>

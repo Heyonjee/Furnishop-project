@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-
+ 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=chrome">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login Page</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" th:href="@{/css/style.css}">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
 
@@ -23,7 +23,7 @@
 			//JASON방식으로 attr을 불러옴
 			$('#login_form').attr({
 				//서버프로그램에 전송할 부분
-				'action' : '/loginimpl',
+				'action' : '[[@{/loginimpl}]]',
 				'method' : 'post'
 			});
 			$('#login_form').submit();
@@ -35,7 +35,7 @@
 	<div class="container">
 		<div class="login-card">
 			<div class="login-card-logo">
-				<img id="logo" src="/img/l_logo.jpg" alt="logo">
+				<img id="logo" th:src="@{/img/l_logo.jpg}" alt="logo">
 			</div>
 
 			<div class="login-card-header">
@@ -63,7 +63,7 @@
 				<button type="submit">Login</button>
 			</form>
 			<div class="login-card-footer">
-				Don't have an account? <a href="#">Create a free account</a>
+				Don't have an account? <a th:href="@{/register}">Create a free account</a>
 			</div>
 
 		</div>

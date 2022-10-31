@@ -7,8 +7,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="cartall" parameterType="String" resultType="CartDTO">
 		SELECT ca.cartno, ca.custid, ca.itemno, it.itemname as item_name,
 		ca.cartcnt, it.itemcolor as item_color, it.itemprice as item_price,
-		it.itemimg as item_img, it.itemsize as item_size,
-		(ca.cartcnt*it.itemprice) as total_price
+		it.itemimg as item_img, it.itemsize as item_size, (ca.totalcnt + ca.cartcnt) as totalcnt,
+		(ca.cartcnt*it.itemprice) as total_price 
 		FROM cart ca
 		INNER JOIN item it ON ca.itemno= it.itemno
 		INNER JOIN cust cu ON ca.custid = cu.custid
@@ -25,8 +25,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		#{custid}
 	</select>
 
-	<select id="selectString" parameterType="String"
-		resultType="CartDTO">
+	<select id="selectString" parameterType="String" resultType="CartDTO">
 		SELECT * FROM cart ca
 		INNER JOIN item it ON ca.itemno=
 		it.itemno
@@ -47,12 +46,12 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 
 	<insert id="insert" parameterType="CartDTO">
 		INSERT INTO cart VALUES (NULL,
-		#{custid}, #{itemno}, #{cartcnt})
+		#{custid}, #{itemno}, #{cartcnt}, #{totalcnt})
 	</insert>
 
 	<update id="update" parameterType="CartDTO">
 		UPDATE cart SET
-		custid=#{custid}, itemno =#{itemno},cartcnt=#{cartcnt} WHERE cartno =
+		custid=#{custid}, itemno =#{itemno}, cartcnt=#{cartcnt}, totalcnt=#{totalcnt} WHERE cartno =
 		#{cartno}
 	</update>
 	<delete id="delete" parameterType="Integer">

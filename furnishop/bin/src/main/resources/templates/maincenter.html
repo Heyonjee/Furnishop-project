@@ -10,21 +10,21 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<img src="/img/bed.jpg" alt="New York" width="1200" height="700">
+			<img th:src="@{/img/bed.jpg}" alt="New York" width="1200" height="700">
 			<div class="carousel-caption">
 				<h3>Bed</h3>
 			</div>
 		</div>
 
 		<div class="item">
-			<img src="/img/sofa.jpg" alt="Chicago" width="1200" height="700">
+			<img th:src="@{/img/sofa.jpg}" alt="Chicago" width="1200" height="700">
 			<div class="carousel-caption">
 				<h3>Sofa</h3>
 			</div>
 		</div>
 
 		<div class="item">
-			<img src="/img/desk.jpg" alt="Los Angeles" width="1200" height="700">
+			<img th:src="@{/img/desk.jpg}" alt="Los Angeles" width="1200" height="700">
 			<div class="carousel-caption">
 				<h3>Desk</h3>
 			</div>
@@ -57,7 +57,7 @@
 				<strong>Bedroom</strong>
 			</p>
 			<br> <a href="#demo" data-toggle="collapse"> <img
-				src="/img/bed.jpg" class="img-circle person" alt="Random Name"
+				th:src="@{/img/bed.jpg}" class="img-circle person" alt="Random Name"
 				width="255" height="255">
 			</a>
 			<div id="demo" class="collapse">
@@ -72,7 +72,7 @@
 				<strong>Living room</strong>
 			</p>
 			<br> <a href="#demo2" data-toggle="collapse"> <img
-				src="/img/sofa.jpg" class="img-circle person" alt="Random Name"
+				th:src="@{/img/sofa.jpg}" class="img-circle person" alt="Random Name"
 				width="255" height="255">
 			</a>
 			<div id="demo2" class="collapse">
@@ -86,7 +86,7 @@
 				<strong>Kitchen</strong>
 			</p>
 			<br> <a href="#demo3" data-toggle="collapse"> <img
-				src="/img/table.jpg" class="img-circle person" alt="Random Name"
+				th:src="@{/img/table.jpg}" class="img-circle person" alt="Random Name"
 				width="255" height="255">
 			</a>
 			<div id="demo3" class="collapse">
@@ -105,35 +105,35 @@
 		<div class="row text-center">
 			<div class="col-sm-4">
 				<div class="thumbnail">
-					<img src="/img/closet.jpg" alt="Closet" width="400" height="300">
+					<img th:src="@{/img/closet.jpg}" alt="Closet" width="400" height="300">
 					<p>
 						<strong>Bedroom</strong>
 					</p>
 
-					<button onclick="location.href='/item/bedroom'" class="btn"
+					<button th:onclick="location.href=[[@{/item/bedroom}]]" class="btn"
 						data-toggle="modal" data-target="">Look Around</button>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<div class="thumbnail">
-					<img src="/img/living-room-dresser.jpg" alt="Living room"
+					<img th:src="@{/img/living-room-dresser.jpg}" alt="Living room"
 						width="400" height="300">
 					<p>
 						<strong>Living room</strong>
 					</p>
 
-					<button onclick="location.href='/item/livingroom'" class="btn"
+					<button th:onclick="location.href=[[@{/item/livingroom}]]" class="btn"
 						data-toggle="modal" data-target="#myModal">Look Around</button>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<div class="thumbnail">
-					<img src="/img/table.jpg" alt="table" width="400" height="300">
+					<img th:src="@{/img/table.jpg}" alt="table" width="400" height="300">
 					<p>
 						<strong>Kitchen</strong>
 					</p>
 
-					<button onclick="location.href='/item/kitchen'" class="btn"
+					<button th:onclick="location.href=[[@{/item/kitchen}]]" class="btn"
 						data-toggle="modal" data-target="#myModal">Look Around</button>
 				</div>
 			</div>

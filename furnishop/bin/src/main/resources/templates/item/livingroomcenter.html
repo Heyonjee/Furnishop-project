@@ -28,7 +28,7 @@
 
 <script>
 	function movedetail(itemno) {
-		location.href = '/item/detail?id=' + itemno;
+		location.href = '[[@{/item/detail?id=}]]' + itemno;
 
 	};
 </script>
@@ -47,14 +47,14 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<img src="/img/sofa.jpg" alt="New York" width="1200" height="700">
+			<img th:src="@{/img/sofa.jpg}" alt="New York" width="1200" height="700">
 			<div class="carousel-caption">
 				<h3>Sofa</h3>
 			</div>
 		</div>
 
 		<div class="item">
-			<img src="/img/living-room-dresser.jpg" alt="Chicago" width="1200"
+			<img th:src="@{/img/living-room-dresser.jpg}" alt="Chicago" width="1200"
 				height="700">
 			<div class="carousel-caption">
 				<h3>Living-room-dresser</h3>
@@ -62,7 +62,7 @@
 		</div>
 
 		<div class="item">
-			<img src="/img/side-table.jpg" alt="Los Angeles" width="1200"
+			<img th:src="@{/img/side-table.jpg}" alt="Los Angeles" width="1200"
 				height="700">
 			<div class="carousel-caption">
 				<h3>Side-table</h3>
@@ -97,7 +97,7 @@
 				<strong>Bedroom</strong>
 			</p>
 			<br> <a href="#demo" data-toggle="collapse"> <img
-				src="/img/bed.jpg" class="img-circle person" alt="Random Name"
+				th:src="@{/img/bed.jpg}" class="img-circle person" alt="Random Name"
 				width="255" height="255">
 			</a>
 			<div id="demo" class="collapse">
@@ -112,7 +112,7 @@
 				<strong>Living room</strong>
 			</p>
 			<br> <a href="#demo2" data-toggle="collapse"> <img
-				src="/img/sofa.jpg" class="img-circle person" alt="Random Name"
+				th:src="@{/img/sofa.jpg}" class="img-circle person" alt="Random Name"
 				width="255" height="255">
 			</a>
 			<div id="demo2" class="collapse">
@@ -126,7 +126,7 @@
 				<strong>Kitchen</strong>
 			</p>
 			<br> <a href="#demo3" data-toggle="collapse"> <img
-				src="/img/table.jpg" class="img-circle person" alt="Random Name"
+				th:src="@{/img/table.jpg}" class="img-circle person" alt="Random Name"
 				width="255" height="255">
 			</a>
 			<div id="demo3" class="collapse">
@@ -146,7 +146,7 @@
 			style="float: none; margin: 100 auto;">
 			<div class="col-sm-5" th:each="living:${list2}">
 				<div class="thumbnail">
-					<img th:src="'/img/'+${living.itemimg}" alt="Paris" width="400"
+					<img th:src="@{/img/}+${living.itemimg}" alt="Paris" width="400"
 						height="500"> <span th:text="${living.itemname}">Livingroom</span><br>
 					<button th:onclick="movedetail([[${living.itemno}]])" class="btn"
 						data-toggle="modal" data-target="#myModal">Buy It</button>

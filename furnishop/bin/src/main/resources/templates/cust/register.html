@@ -2,14 +2,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=chrome">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/re_style.css">
+<link rel="stylesheet" th:href="@{/css/re_style.css}">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
 <script>
 	$(document).ready(function() {
 		$('#register_form > button').click(function() {
 			$('#register_form').attr({
-				'action' : '/registerimpl',
+				'action' : '[[@{/registerimpl}]]',
 				'method' : 'post'
 			});
 			$('#register_form').submit();
@@ -30,8 +30,9 @@
 		//id가 이미 있는 아이디인지 아닌지를 판별해줌
 		$('#id').keyup(function() {
 			var id = $(this).val();
+			
 			$.ajax({
-				url : '/checkid',
+				url : '[[@{/checkid}]]',
 				//JSON형식으로 보내줌(입력한 id를!)
 				//Acontroller에 보낼 변수명
 				data : {
